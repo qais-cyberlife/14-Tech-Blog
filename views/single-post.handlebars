@@ -1,59 +1,21 @@
-<div class="soccer">
-  <main class="soccer-formation">
-    <!--442-->
-    <div class="pitch">
-      <h4>4-4-2</h4>
-      <div class="container">
-        <div class="box1">
-          <div class="pen1">
-            <div class="pos" style="margin: 5px 15px;">{{dreamteam.Gk}}</div>
-          </div>
-        </div>
-        <div class="pos" style="margin: 65px 53px">{{dreamteam.Rb}}</div>
-        <div class="pos" style="margin: 65px 126px;">{{dreamteam.Cb2}}</div>
-        <div class="pos" style="margin: 65px 186px;">{{dreamteam.Cb1}}</div>
-        <div class="pos" style="margin: 65px 258px">{{dreamteam.Lb}}</div>
+{{> post-info post}}
 
-        <div class="pos" style="margin: 185px 258px">{{dreamteam.Lw}}</div>
-        <div class="pos" style="margin: 185px 126px">{{dreamteam.Cm1}}</div>
-        <div class="pos" style="margin: 185px 186px">{{dreamteam.Cm2}}</div>
-        <div class="pos" style="margin: 185px 53px">{{dreamteam.Rw}} </div>
+{{#if logged_in}}
 
-        <div class="pos" style="margin: 320px 126px">{{dreamteam.St2}}</div>
-        <div class="pos" style="margin: 320px 186px;">{{dreamteam.St1}}</div>
-
-
-        <div class="half"></div>
-        <div class="box2">
-          <div class="pen2"></div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-
-  {{!-- <ul>
-    <li>{{dreamteam.Gk}}</li>
-    <li>{{dreamteam.Rb}}</li>
-    <li>{{dreamteam.Cb1}}</li>
-    <li>{{dreamteam.Cb2}}</li>
-    <li>{{dreamteam.Lb}}</li>
-    <li>{{dreamteam.Rw}}</li>
-    <li>{{dreamteam.Cm1}}</li>
-    <li>{{dreamteam.Cm2}}</li>
-    <li>{{dreamteam.Lw}}</li>
-    <li>{{dreamteam.St1}}</li>
-    <li>{{dreamteam.St2}}</li>
-  </ul> --}}
-
-</div>
-
-<form id="deleteBar">
-  <div class="form-group">
+<form class="comment-form mx-3 my-3">
+  <div>
+    <textarea class="textarea" name="comment-body"></textarea>
   </div>
-  <button type="submit" id={{dreamteam.id}} class="btn btn-primary deleteButton">Delete</button>
+
+  <div>
+    <button class="button mt-3" type="submit">Add comment</button>
+  </div>
 </form>
+{{!-- <div><a class="button mx-3 my-3" href="/dashboard"> &larr; Back to dashboard</a></div> --}}
+{{/if}}
 
+{{> comments post}}
 
-<script src="/javascript/delete.js"></script>
-
+{{#if logged_in}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

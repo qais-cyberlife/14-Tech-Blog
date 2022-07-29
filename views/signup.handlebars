@@ -1,59 +1,59 @@
 <section class=" text-center text-lg-start">
-        <style>
-            .rounded-t-5 {
-                border-top-left-radius: 0.5rem;
-                border-top-right-radius: 0.5rem;
+    <style>
+        .rounded-t-5 {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .rounded-tr-lg-0 {
+                border-top-right-radius: 0;
             }
 
-            @media (min-width: 992px) {
-                .rounded-tr-lg-0 {
-                    border-top-right-radius: 0;
-                }
-
-                .rounded-bl-lg-5 {
-                    border-bottom-left-radius: 0.5rem;
-                }
+            .rounded-bl-lg-5 {
+                border-bottom-left-radius: 0.5rem;
             }
-        </style>
-        <div class="card">
-            <div class="row g-0 d-flex">
-                <div class="col-lg-4 d-none d-lg-flex ">
-                    <img src="../images/qatar-2022-logo.png" alt="Logo"
-                        class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-                </div>
-                <div class="col-lg-8 signup-bg">
-                  
-                    <div class="card-body py-5 px-md-5 formsadjust">
+        }
+    </style>
+    <div class="card">
+        <div class="row g-0 d-flex">
+            <div class="col-lg-4 d-none d-lg-flex ">
+                <img src="../images/qatar-2022-logo.png" alt="Logo"
+                    class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+            </div>
+            <div class="col-lg-8 signup-bg">
 
-                        <form class="signup-form">
-                            <!-- Email input -->
-                            <div class="form-outline mb-2">
-                                <input type="email" id="email-signup" class="form-control" />
-                                <label class="form-label text-white" for="email">Email</label>
-                            </div>
+                <div class="card-body py-5 px-md-5 formsadjust">
 
-                              <!-- Username input -->
-                              <div class="form-outline mb-2">
-                                <input type="text" id="username-signup" class="form-control" />
-                                <label class="form-label text-white" for="username">Username</label>
-                            </div>
+                    <form class="signup-form">
+                        <!-- Email input -->
+                        <div class="form-outline mb-2">
+                            <input type="email" id="email-signup" class="form-control" />
+                            <label class="form-label text-white" for="email">Email</label>
+                        </div>
 
-                            <!-- Password input -->
-                            <div class="form-outline mb-2">
-                                <input type="password" id="password-signup" class="form-control" />
-                                <label class="form-label text-black" for="password">Password</label>
-                            </div>
+                        <!-- Username input -->
+                        <div class="form-outline mb-2">
+                            <input type="text" id="username-signup" class="form-control" />
+                            <label class="form-label text-white" for="username">Username</label>
+                        </div>
 
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-2">Register</button>
-                           
-                        </form>
-                            
-                    </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-2">
+                            <input type="password" id="password-signup" class="form-control" />
+                            <label class="form-label text-black" for="password">Password</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-2">Register</button>
+
+                    </form>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="/javascript/signup.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="/javascript/signup.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>

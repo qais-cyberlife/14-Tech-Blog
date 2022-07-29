@@ -1,23 +1,25 @@
-{{#if logged_in}}
-<div>
-  <form id="commentBar" class="formsadjust">
-    <div class="form-group">
-      <label for="commentBar" class="text-white">Leave a Comment about {{team.name}} </label>
-      <input type="text" class="form-control" id="commentText" placeholder="Comment">
+<div class="card my-2">
+  <header class="card-header card-header-title has-background-primary-light">
+
+    <div class="column">
+      <p class=" has-text-primary-light"></p>
+      <a href="/post/{{id}}" class="has-text-black is-capitalized is-pulled-left title">{{title}} </a></p>
     </div>
 
+    <div class="column">
+      <span class=""> </span>
+    </div>
 
+  </header>
 
-    </datalist>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <div class="card-content">
+    <div class="content has-text-justified">
+      {{post_content}}
+    </div>
+    <div class="is-pulled-right">
+      <b>{{user.username}}</b>
+      | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}}
+        {{format_plural "comment" comments.length}}</a>
+    </div>
 
-
-  {{else}}
-  <div class="login-text">
-    <strong class="text-white"> <a href="/login">LOGIN</a> TO ADD A COMMENT</strong>
   </div>
-  {{/if}}
-</div>
-
-<script src="/javascript/singleTeamComment.js"></script>
