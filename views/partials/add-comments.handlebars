@@ -1,60 +1,20 @@
+{{#if logged_in}}
+<div>
+  <form id="commentBar" class="formsadjust">
+    
+    <div class="form-group">
+      <label for="commentBar" class="text-white">Leave a Comment</label>
+      <input type="text" class="form-control" id="commentText" placeholder="Comment">
+    </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
 
-
-  {{#if logged_in}}
-  <div>
-        <form id="commentBar" class="formsadjust">
-            <div class="form-group">
-                <label for="commentBar" class="text-white">Leave a Comment</label>
-                <input type="text" class="form-control" id="commentText" placeholder="Comment">
-            </div>
-            <div class="form-group">
-
-                 <label for="commentBar" class="form-label text-white">About What Team</label>
-                <input class="form-control" list="datalistOptions" id="commentTeam" placeholder="Type to search...">
-                <datalist id="datalistOptions">
-                    <option value="1 Qatar">
-                    <option value="2 Ecuador">
-                    <option value="3 Senegal">
-                    <option value="4 Netherlands">
-                    <option value="5 England">
-                    <option value="6 Iran">
-                    <option value="7 USA">
-                    <option value="8 Wales">
-                    <option value="9 Argentina">
-                    <option value="10 Saudi Arabia">
-                    <option value="11 Mexico">
-                    <option value="12 Poland">
-                    <option value="13 France">
-                    <option value="14 Denmark">
-                    <option value="15 Tunisia">
-                    <option value="16 Australia">
-                    <option value="17 Spain">
-                    <option value="18 Germany">
-                    <option value="19 Japan">
-                    <option value="20 Costa Rica">
-                    <option value="21 Belgium">
-                    <option value="22 Canada">
-                    <option value="23 Morocco">
-                    <option value="24 Croatia">
-                    <option value="25 Brazil">
-                    <option value="26 Serbia">
-                    <option value="27 Switzerland">
-                    <option value="28 Cameroon">
-                    <option value="29 Portugal">
-                    <option value="30 Ghana">
-                    <option value="31 Uruguay">
-                    <option value="32 South Korea">
-
-                </datalist>
-              <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-   
-  
-{{else}}
-<div class="login-text">
-<strong class="text-white"> <a href="/login">LOGIN</a> TO ADD A COMMENT</strong>
-</div>
+  {{else}}
+  <div class="login-text">
+    <strong class="text-white"> <a href="/login">LOGIN</a> TO ADD A COMMENT</strong>
+  </div>
   {{/if}}
- </div>
-    <script src="/javascript/commentAdd.js"></script>
+</div>
+<script src="/javascript/commentAdd.js"></script>
