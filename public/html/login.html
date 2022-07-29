@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <title>login test</title>
+</head>
+
+<body>
+    <!-- Section: Design Block -->
+    <section class=" text-center text-lg-start">
+        <style>
+            .rounded-t-5 {
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+
+            @media (min-width: 992px) {
+                .rounded-tr-lg-0 {
+                    border-top-right-radius: 0;
+                }
+
+                .rounded-bl-lg-5 {
+                    border-bottom-left-radius: 0.5rem;
+                }
+            }
+        </style>
+        <div class="card mb-3">
+            <div class="row g-0 d-flex align-items-center">
+                <div class="col-lg-4 d-none d-lg-flex">
+                    <img src="../images/qatar-2022-logo.png" alt="Logo"
+                        class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+                </div>
+                <div class="col-lg-8">
+                    <div class="card-body py-5 px-md-5">
+
+                        <form>
+                            <!-- Username input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="username" class="form-control" />
+                                <label class="form-label" for="username">Username</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="password" class="form-control" />
+                                <label class="form-label" for="password">Password</label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                            
+                            <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/signup"
+                                style="color: #393f81;">Register here</a></p>
+                        </form>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

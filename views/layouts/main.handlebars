@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/flag-icons/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg " id="nav-bar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../images/qatar-2022-logo.png" alt="" width="30" height="24"
+                    class="qatar-logo d-inline-block align-text-top">
+            </a>
+
+            <a class="navbar-brand text-white" href="#">Tech Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="navbarSupportedContent" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="home-button nav-link active text-white" aria-current="page" href="/">Home</a>
+                    </li>
+
+                    {{#if logged_in}}
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/dreamteam">View Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">{{username}}'s Account</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+
+            <div class="log-btn">
+                <form class="container-fluid log-btn">
+                    {{#if logged_in}}
+
+                    <a class="button has-background-primary-light" href="/">All Posts</a>
+
+
+                    <a href="/" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="logout">Logout</a></button>
+                    {{else}}
+                    <a href="/login" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="login-btn">Login</a></button>
+                    <a href="/signup" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="signup-btn">SignUp</a></button>
+                    {{/if}}
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Slideshow -->
+    <div class="container-fluid latest-news-ribbon">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center breaking-news">
+                    <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center py-2 text-white px-1 news">
+                        <span class="d-flex align-items-center">&nbsp;Latest News</span>
+                    </div>
+                    <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();"
+                        onmouseout="this.start();"> <a href="#"> Canada Beats Belgium 71- 0 in the first Match ---
+                            Thomas Muller Injured During the First Match </a>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main>
+        {{{body}}}
+    </main>
+
+    {{>footer}}
+
+    {{#if logged_in}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>

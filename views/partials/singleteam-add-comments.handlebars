@@ -1,0 +1,22 @@
+  {{#if logged_in}}
+  <div>
+        <form id="commentBar" class="formsadjust">
+            <div class="form-group">
+                <label for="commentBar" class="text-white">Leave a Comment about {{team.name}} </label>
+                <input type="text" class="form-control" id="commentText" placeholder="Comment">
+            </div>
+  
+                   
+
+                </datalist>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+   
+  
+{{else}}
+<div class="login-text">
+<strong class="text-white"> <a href="/login">LOGIN</a> TO ADD A COMMENT</strong>
+</div>
+  {{/if}}
+ </div>
+    <script src="/javascript/singleTeamComment.js"></script>
