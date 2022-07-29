@@ -1,17 +1,9 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
-const {Comment, Post, User} = require('../models');
-const withAuth = require ('../utils/auth');
+const { User, Post, Comment } = require('../models')
 const sequelize = require('../config/connection')
 
-
-
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     Post.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
         attributes: [
             'id',
             'title',
@@ -39,9 +31,10 @@ router.get('/', withAuth, (req, res) => {
                 plain: true,
             }))
 
-            res.render('dashboard', {
+            res.render('homepage', {
                 posts,
-                loggedIn: true,
+                username: req.session.username,
+                logged_in: req.session.loggedIn,
 
             })
         })
@@ -50,8 +43,23 @@ router.get('/', withAuth, (req, res) => {
         })
 })
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+})
 
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
+})
+
+router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id,
@@ -88,55 +96,18 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 })
                 return
             }
-        const post = dbPostData.get({plane: true});
-        res.render('edit-post', {
-            post,
-            loggedIn: true,
-        })
-        })
+            const post = dbPostData.get({ plane: true });
 
-        .catch(err => {
-            res.status(500).json(err)
-        })
-})
+            post.user = JSON.parse(JSON.stringify(post.user));
+            post.comments = JSON.parse(JSON.stringify(post.comments));
 
-router.get('/create/', withAuth, (req,res) => {
-    Post.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'id',
-            'title',
-            'created_at',
-            'post_content'
-        ],
-        include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username', 'twitter', 'github']
-                }
-            },
 
-            {
-                model: User,
-                attributes: ['username', 'twitter', 'github']
-            }
-        ]
-    })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({
-                plain: true,
-            }))
-
-            res.render('create-post', {
-                posts,
-                loggedIn: true,
+            res.render('single-post', {
+                post,
+                logged_in: req.session.loggedIn,
             })
         })
+
         .catch(err => {
             res.status(500).json(err)
         })
